@@ -1,754 +1,748 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+Ah! I see exactly what happened here.
+When you downloaded or saved the file, your machine actually escaped and stripped the actual HTML structure, turning the whole document into plain encoded text wrapped inside a <pre> block. It literally changed the code into a giant paragraph of text rather than an active webpage!
+Let's fix this completely. Here is a perfectly clean, raw, unescaped, production-ready index.html file template.
+How to use this code perfectly:
+1. Copy the complete code block below.
+2. Open Notepad (or any text editor like VS Code or Notepad++).
+3. Paste the code into the file.
+4. Go to File > Save As...
+5. Change Save as type to All Files (*.*).
+6. Name the file exactly index.html and hit save.
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manjunath Channappa | Customer Success, AI & Cloud Transformation Executive</title>
+  <meta name="description" content="Customer Success, AI & Cloud Transformation, Service Delivery, Program Management and Engagement Leadership executive with 22+ years of experience." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* VARIABLES & PREMIUM ENTERPRISE DARK THEME */
+    :root {
+      --bg-main: #060913;
+      --bg-card: rgba(15, 22, 42, 0.65);
+      --bg-card-hover: rgba(23, 33, 61, 0.85);
+      --accent-primary: #00F2FE;
+      --accent-secondary: #4FACFE;
+      --text-main: #F3F4F6;
+      --text-muted: #9CA3AF;
+      --text-dark: #060913;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(0, 242, 254, 0.3);
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Ambient Glassmorphic Glows */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -10%;
+      left: -10%;
+      width: 60vw;
+      height: 60vw;
+      background: radial-gradient(circle, rgba(79, 172, 254, 0.08) 0%, transparent 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      bottom: -10%;
+      right: -10%;
+      width: 60vw;
+      height: 60vw;
+      background: radial-gradient(circle, rgba(0, 242, 254, 0.05) 0%, transparent 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* UTILITIES & TYPOGRAPHY */
+    .section {
+      padding: 7rem 2rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .section { padding: 4.5rem 1.5rem; }
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.25rem;
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4.25rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    p.lead {
+      font-size: 1.25rem;
+      color: var(--text-main);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* BUTTONS */
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-actions.center {
+      justify-content: center;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 2.2rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s var(--smooth);
+      cursor: pointer;
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+      color: var(--text-dark);
+      box-shadow: 0 4px 20px rgba(0, 242, 254, 0.2);
+    }
+
+    .button.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(0, 242, 254, 0.4);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .button.secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--text-muted);
+      transform: translateY(-2px);
+    }
+
+    /* SITE HEADER & HARDWARE BLUR BLENDING */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 4rem;
+      z-index: 1000;
+      background: rgba(6, 9, 19, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 1024px) {
+      .site-header { padding: 0 2rem; }
+    }
+
+    .brand {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #fff 40%, var(--accent-primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav {
+      display: flex;
+      gap: 2.2rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--accent-primary);
+    }
+
+    .menu {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .menu { display: block; }
+      .nav {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #0B0F19;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s var(--smooth);
+      }
+      .nav.active {
+        max-height: 450px;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .nav a {
+        padding: 1.2rem 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.03);
+        display: block;
+      }
+    }
+
+    /* HERO LAYOUT */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 4rem;
+      align-items: center;
+      padding-top: 11rem;
+    }
+
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding-top: 9rem;
+      }
+    }
+
+    .hero-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
+    }
+
+    .card-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--accent-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card h3 {
+      font-size: 1.4rem;
+      line-height: 1.4;
+      margin-bottom: 2rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+    }
+
+    .hero-card li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+      color: var(--text-main);
+    }
+
+    .hero-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      width: 8px;
+      height: 8px;
+      background: var(--accent-primary);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-primary);
+    }
+
+    /* SECTION GRIDS */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 768px) {
+      .split { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    .split p + p {
+      margin-top: 1.5rem;
+    }
+
+    .cards.three {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .cards article {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem;
+      transition: all 0.3s var(--smooth);
+    }
+
+    .cards article:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+    }
+
+    /* QUANTIFIABLE ENTERPRISE METRICS */
+    .dark-wrap {
+      background: #03050b;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2px;
+      background: var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 3rem;
+      border: 1px solid var(--border-color);
+    }
+
+    .metrics > div {
+      background: var(--bg-main);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: background 0.3s ease;
+    }
+
+    .metrics > div:hover {
+      background: rgba(15, 22, 42, 0.4);
+    }
+
+    .metrics strong {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #fff, var(--text-muted));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .metrics span {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    /* TAG PILLS FOR TECH SKILLS */
+    .skill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .skill-grid span {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .skill-grid span:hover {
+      background: rgba(0, 242, 254, 0.05);
+      border-color: var(--accent-primary);
+      color: #fff;
+    }
+
+    /* TIMELINE STYLES */
+    .timeline {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .timeline article {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
+      align-items: start;
+      transition: border-color 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .timeline article {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 2rem;
+      }
+    }
+
+    .timeline article:hover {
+      border-color: rgba(79, 172, 254, 0.4);
+    }
+
+    .story-logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      display: inline-block;
+      text-align: center;
+      border-left: 3px solid var(--accent-secondary);
+    }
+
+    /* BADGE GRID FOR CERTIFICATIONS */
+    .certs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .certs span {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      padding: 1.2rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+    }
+
+    .certs span::before {
+      content: "✓";
+      color: var(--accent-primary);
+      font-weight: bold;
+      margin-right: 12px;
+      font-size: 1.1rem;
+    }
+
+    .contact {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 10rem 2rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      background: #03050b;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Manjunath Channappa | Customer Success, AI &amp; Cloud Transformation Executive&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Customer Success, AI &amp; Cloud Transformation, Service Delivery, Program Management and Engagement Leadership executive with 22+ years of experience." /&gt;</p>
-<p class="p2"><span class="Apple-converted-space">  </span></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p2"><span class="Apple-converted-space">  </span></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* VARIABLES &amp; PREMIUM ENTERPRISE DARK THEME */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--bg-main: #060913;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--bg-card: rgba(15, 22, 42, 0.65);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--bg-card-hover: rgba(23, 33, 61, 0.85);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--accent-primary: #00F2FE;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--accent-secondary: #4FACFE;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--text-main: #F3F4F6;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--text-muted: #9CA3AF;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--text-dark: #060913;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--border-color: rgba(255, 255, 255, 0.08);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--border-hover: rgba(0, 242, 254, 0.3);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--font-sans: 'Inter', system-ui, -apple-system, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--smooth: cubic-bezier(0.16, 1, 0.3, 1);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>* {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-sizing: border-box;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>html {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>scroll-behavior: smooth;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: var(--bg-main);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-sans);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>-webkit-font-smoothing: antialiased;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow-x: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Ambient Glassmorphic Glows */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>body::before {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>content: "";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: fixed;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>top: -10%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>left: -10%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 60vw;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 60vw;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: radial-gradient(circle, rgba(79, 172, 254, 0.08) 0%, transparent 70%);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index: -1;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>pointer-events: none;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>body::after {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>content: "";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: fixed;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>bottom: -10%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>right: -10%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 60vw;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 60vw;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: radial-gradient(circle, rgba(0, 242, 254, 0.05) 0%, transparent 70%);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index: -1;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>pointer-events: none;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* UTILITIES &amp; TYPOGRAPHY */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.section {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 7rem 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 1280px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 768px) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.section { padding: 4.5rem 1.5rem; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.eyebrow {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.2em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>-webkit-background-clip: text;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>-webkit-text-fill-color: transparent;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 1.25rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>h1 {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(2.5rem, 5vw, 4.25rem);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 800;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.15;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.03em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>h2 {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(1.8rem, 3.5vw, 2.5rem);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.25;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.02em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>h3 {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.35rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.01em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>p {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.05rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>p.lead {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.25rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 300;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.7;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* BUTTONS */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero-actions {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero-actions.center {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.button {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: inline-flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 0.9rem 2.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: all 0.3s var(--smooth);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.button.primary {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-dark);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 4px 20px rgba(0, 242, 254, 0.2);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.button.primary:hover {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: translateY(-2px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 6px 25px rgba(0, 242, 254, 0.4);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.button.secondary {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 255, 255, 0.04);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.button.secondary:hover {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 255, 255, 0.08);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: translateY(-2px);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* SITE HEADER &amp; HARDWARE BLUR BLENDING */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.site-header {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: fixed;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>top: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 80px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 0 4rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index: 1000;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(6, 9, 19, 0.75);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(20px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>-webkit-backdrop-filter: blur(20px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 1024px) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.site-header { padding: 0 2rem; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 800;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.02em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, #fff 40%, var(--accent-primary));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>-webkit-background-clip: text;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>-webkit-text-fill-color: transparent;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 2.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav a {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: color 0.2s ease;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav a:hover {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--accent-primary);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.menu {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 900px) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.menu { display: block; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.nav {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>top: 80px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>background: #0B0F19;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>gap: 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>max-height: 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>transition: max-height 0.4s var(--smooth);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.nav.active {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>max-height: 450px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>border-bottom: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.nav a {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>padding: 1.2rem 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>border-top: 1px solid rgba(255, 255, 255, 0.03);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* HERO LAYOUT */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1.25fr 0.75fr;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 4rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding-top: 11rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 1024px) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.hero {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>grid-template-columns: 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>gap: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>padding-top: 9rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero-card {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--bg-card);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 20px 40px rgba(0,0,0,0.4);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero-card::before {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>content: "";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>top: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 3px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.card-label {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.75rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.1em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--accent-primary);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 0.75rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero-card h3 {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.4rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.4;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero-card ul {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>list-style: none;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero-card li {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding-left: 1.75rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.05rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero-card li::before {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>content: "";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>top: 0.6rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--accent-primary);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 0 8px var(--accent-primary);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* SECTION GRIDS */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.split {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1fr 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 4rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 768px) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.split { grid-template-columns: 1fr; gap: 2rem; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.split p + p {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cards.three {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cards article {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--bg-card);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: all 0.3s var(--smooth);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cards article:hover {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--bg-card-hover);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-color: var(--border-hover);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: translateY(-4px);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* QUANTIFIABLE ENTERPRISE METRICS */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.dark-wrap {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: #03050b;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.metrics {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 2px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.metrics &gt; div {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--bg-main);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 2.5rem 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: background 0.3s ease;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.metrics &gt; div:hover {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(15, 22, 42, 0.4);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.metrics strong {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 800;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.02em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.2;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 0.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, #fff, var(--text-muted));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>-webkit-background-clip: text;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>-webkit-text-fill-color: transparent;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.metrics span {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.05em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* TAG PILLS FOR TECH SKILLS */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.skill-grid {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 0.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.skill-grid span {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 255, 255, 0.03);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 0.6rem 1.4rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: all 0.2s ease;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.skill-grid span:hover {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(0, 242, 254, 0.05);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-color: var(--accent-primary);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* TIMELINE STYLES */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.timeline {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.timeline article {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--bg-card);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 180px 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: start;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: border-color 0.3s ease;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 768px) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.timeline article {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>grid-template-columns: 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>gap: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>padding: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.timeline article:hover {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-color: rgba(79, 172, 254, 0.4);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.story-logo {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.25rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 800;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.05em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 255, 255, 0.05);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 0.5rem 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-left: 3px solid var(--accent-secondary);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* BADGE GRID FOR CERTIFICATIONS */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.certs {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.certs span {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 255, 255, 0.02);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 1.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.certs span::before {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>content: "✓";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--accent-primary);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-right: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.contact {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 800px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 10rem 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>footer {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-top: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 2.5rem 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: #03050b;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>footer p {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;header class="site-header"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a class="brand" href="#home"&gt;MC&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav class="nav" id="nav"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#about" onclick="closeMenu()"&gt;About&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#impact" onclick="closeMenu()"&gt;Impact&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#ai" onclick="closeMenu()"&gt;AI &amp; Cloud&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#skills" onclick="closeMenu()"&gt;Skills&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#stories" onclick="closeMenu()"&gt;Success Stories&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#certifications" onclick="closeMenu()"&gt;Certifications&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#contact" onclick="closeMenu()"&gt;Contact&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="menu" aria-label="Toggle navigation" onclick="toggleMenu()"&gt;☰&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;main id="home"&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="hero section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-copy"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="eyebrow"&gt;Program Management · Service Delivery · Customer Success · AI Transformation&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Manjunath Channappa&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Customer Success &amp; AI Cloud Transformation Executive&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="lead"&gt;22+ years of global experience, including 17 years at Cisco, leading enterprise transformation across AI, Cloud, Cybersecurity, SaaS, Managed Services, Contact Centre, Enterprise Networking, and strategic customer portfolios for Fortune 500 organisations.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-actions"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="button primary" href="#contact"&gt;Contact Me&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="button secondary" href="#stories"&gt;View Success Stories&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;aside class="hero-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="card-label"&gt;Executive Positioning&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Strategic Customer Success leader who turns complex technology into measurable business outcomes.&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;$50M ARR portfolio ownership&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;$200M+ services delivery governance&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;$500M+ services revenue influenced&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;C-Suite trusted advisor&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/aside&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="about" class="section split"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="eyebrow"&gt;About&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Enterprise transformation leadership with hands-on AI and cloud depth.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Manjunath combines Customer Success Leadership, Service Delivery Governance, Commercial Growth, and Technical Transformation experience across strategic Cisco customers including Shell, SAP, Barclays, Citi, NatWest, LSEG, Coca-Cola, BT, Ricoh, BASF, Boerse Stuttgart and ENGEL.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;He bridges business requirements with technical solutions, translating executive priorities into cloud migration, modernization, AI adoption, cybersecurity transformation, and managed services outcomes.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="dark-wrap" id="impact"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="eyebrow"&gt;Impact at a Glance&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Quantifiable Executive Milestones&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="metrics"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;strong&gt;$50M&lt;/strong&gt;&lt;span&gt;ARR Portfolio&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;strong&gt;$200M+&lt;/strong&gt;&lt;span&gt;Delivery Governance&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;strong&gt;$500M+&lt;/strong&gt;&lt;span&gt;Services Revenue Influenced&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;strong&gt;98%+&lt;/strong&gt;&lt;span&gt;Customer Retention&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;strong&gt;$15M&lt;/strong&gt;&lt;span&gt;SAP TCV Renewal&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;strong&gt;30+&lt;/strong&gt;&lt;span&gt;Large Projects Delivered&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;strong&gt;50%&lt;/strong&gt;&lt;span&gt;Productivity Improvement&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;strong&gt;23%&lt;/strong&gt;&lt;span&gt;Gross Margin Improvement&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="ai" class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="eyebrow"&gt;AI, Cloud &amp; Technical Transformation&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;From business objective to technical architecture and delivery.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cards three"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Agentic AI &amp; GenAI&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Designed Agentic AI and Generative AI solution frameworks using Google Vertex AI, Gemini, Cloud Run, Cloud Functions, BigQuery, Firestore, Pub/Sub, IAM, RAG patterns, and human-in-the-loop guardrails.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Cloud Modernization&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Leads cloud migration, modernization, and implementation programs across AWS, Azure, and Google Cloud, aligning enterprise architecture, security, governance, and operating models.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Technical Leadership&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Distils customer needs into technical requirements, decomposes complex problems into deliverable workstreams, facilitates engineering discussions, and defines documentation standards.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="skills" class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="eyebrow"&gt;Core Capabilities&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Skills aligned to enterprise customer success, cloud transformation and AI leadership.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="skill-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Customer Success Leadership&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Executive Stakeholder Management&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;AI Transformation Strategy&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Cloud Migration &amp; Modernization&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Enterprise Architecture Alignment&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Program &amp; Portfolio Leadership&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Managed Services Operating Models&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Cybersecurity Transformation&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Service Delivery Governance&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;MSR / QBR / EBR / SLA Governance&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Technical Requirements Engineering&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Business Outcome Mapping&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Commercial Forecasting &amp; P&amp;L&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Renewals &amp; Expansion&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Responsible AI Governance&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Technical Documentation Standards&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Audit &amp; Compliance&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;Cross-Sell / Upsell &amp; MEDDPICC&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;SOW &amp; Contract Governance&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;AI Use Case Discovery &amp; Prioritisation&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="stories" class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="eyebrow"&gt;Success Stories&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Customer outcomes delivered at enterprise scale.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="timeline"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;span class="story-logo"&gt;SAP&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;ACI Platform Turnaround&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Recovered a challenged ACI platform by introducing Cisco Managed Services, proactive governance, and executive relationship management. Improved availability, reduced risk, delayed platform retirement, generated $2.5M expansion revenue, and secured a $5M ARR / $15M TCV renewal.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;span class="story-logo"&gt;Shell&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;SecurePlant OT Cybersecurity Transformation&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Directed global OT/ICS managed security transformation across 30 downstream and upstream sites with 20+ vendors. Drove $9.3M expansion opportunities, 50% productivity improvement through automation, zero SLA penalties, and 23% gross margin improvement.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;&lt;span class="story-logo"&gt;ENGEL&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Managed Security &amp; Threat Analytics&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Transformed a complex security services engagement by improving monitoring, ticket enrichment, operational governance, and lifecycle management; achieved no major incidents over a five-year engagement period and supported multi-year renewal.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="dark-wrap" id="certifications"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="eyebrow"&gt;Credentials&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Certified across AI, Cloud, Security, Agile and Program Management.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="certs"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;CISM&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;PMP&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;AWS Certified Solutions Architect – Associate&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;Microsoft Azure AZ-305&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;Certified ScrumMaster&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;ITIL&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;Fortinet Cybersecurity Fundamentals&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;Cisco Security Ninja Green Belt&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;Agentic AI &amp; GenAI Enablement&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;Google Vertex AI &amp; Gemini&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="contact" class="section contact"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="eyebrow"&gt;Contact&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Let’s discuss Customer Success, AI Transformation, Cloud Modernization, or Enterprise Delivery Leadership.&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hero-actions center"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="button primary" href="mailto:personal.manjunathc@gmail.com"&gt;Email Me&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="button secondary" href="https://www.linkedin.com/in/manjunathc" target="_blank" rel="noopener"&gt;LinkedIn&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/main&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;© Manjunath Channappa. Customer Success · AI &amp; Cloud Transformation · Engagement Leadership.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>function toggleMenu() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const nav = document.getElementById('nav');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>nav.classList.toggle('active');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>function closeMenu() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const nav = document.getElementById('nav');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>nav.classList.remove('active');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+  <header class="site-header">
+    <a class="brand" href="#home">MC</a>
+    <nav class="nav" id="nav">
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#impact" onclick="closeMenu()">Impact</a>
+      <a href="#ai" onclick="closeMenu()">AI & Cloud</a>
+      <a href="#skills" onclick="closeMenu()">Skills</a>
+      <a href="#stories" onclick="closeMenu()">Success Stories</a>
+      <a href="#certifications" onclick="closeMenu()">Certifications</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
+    <button class="menu" aria-label="Toggle navigation" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <main id="home">
+    
+    <section class="hero section">
+      <div class="hero-copy">
+        <p class="eyebrow">Program Management · Service Delivery · Customer Success · AI Transformation</p>
+        <h1>Manjunath Channappa</h1>
+        <h2>Customer Success & AI Cloud Transformation Executive</h2>
+        <p class="lead">22+ years of global experience, including 17 years at Cisco, leading enterprise transformation across AI, Cloud, Cybersecurity, SaaS, Managed Services, Contact Centre, Enterprise Networking, and strategic customer portfolios for Fortune 500 organisations.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#contact">Contact Me</a>
+          <a class="button secondary" href="#stories">View Success Stories</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <p class="card-label">Executive Positioning</p>
+        <h3>Strategic Customer Success leader who turns complex technology into measurable business outcomes.</h3>
+        <ul>
+          <li>$50M ARR portfolio ownership</li>
+          <li>$200M+ services delivery governance</li>
+          <li>$500M+ services revenue influenced</li>
+          <li>C-Suite trusted advisor</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="about" class="section split">
+      <div>
+        <p class="eyebrow">About</p>
+        <h2>Enterprise transformation leadership with hands-on AI and cloud depth.</h2>
+      </div>
+      <div>
+        <p>Manjunath combines Customer Success Leadership, Service Delivery Governance, Commercial Growth, and Technical Transformation experience across strategic Cisco customers including Shell, SAP, Barclays, Citi, NatWest, LSEG, Coca-Cola, BT, Ricoh, BASF, Boerse Stuttgart and ENGEL.</p>
+        <p>He bridges business requirements with technical solutions, translating executive priorities into cloud migration, modernization, AI adoption, cybersecurity transformation, and managed services outcomes.</p>
+      </div>
+    </section>
+
+    <div class="dark-wrap" id="impact">
+      <section class="section">
+        <p class="eyebrow">Impact at a Glance</p>
+        <h2>Quantifiable Executive Milestones</h2>
+        <div class="metrics">
+          <div><strong>$50M</strong><span>ARR Portfolio</span></div>
+          <div><strong>$200M+</strong><span>Delivery Governance</span></div>
+          <div><strong>$500M+</strong><span>Services Revenue Influenced</span></div>
+          <div><strong>98%+</strong><span>Customer Retention</span></div>
+          <div><strong>$15M</strong><span>SAP TCV Renewal</span></div>
+          <div><strong>30+</strong><span>Large Projects Delivered</span></div>
+          <div><strong>50%</strong><span>Productivity Improvement</span></div>
+          <div><strong>23%</strong><span>Gross Margin Improvement</span></div>
+        </div>
+      </section>
+    </div>
+
+    <section id="ai" class="section">
+      <p class="eyebrow">AI, Cloud & Technical Transformation</p>
+      <h2>From business objective to technical architecture and delivery.</h2>
+      <div class="cards three">
+        <article>
+          <h3>Agentic AI & GenAI</h3>
+          <p>Designed Agentic AI and Generative AI solution frameworks using Google Vertex AI, Gemini, Cloud Run, Cloud Functions, BigQuery, Firestore, Pub/Sub, IAM, RAG patterns, and human-in-the-loop guardrails.</p>
+        </article>
+        <article>
+          <h3>Cloud Modernization</h3>
+          <p>Leads cloud migration, modernization, and implementation programs across AWS, Azure, and Google Cloud, aligning enterprise architecture, security, governance, and operating models.</p>
+        </article>
+        <article>
+          <h3>Technical Leadership</h3>
+          <p>Distils customer needs into technical requirements, decomposes complex problems into deliverable workstreams, facilitates engineering discussions, and defines documentation standards.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <p class="eyebrow">Core Capabilities</p>
+      <h2>Skills aligned to enterprise customer success, cloud transformation and AI leadership.</h2>
+      <div class="skill-grid">
+        <span>Customer Success Leadership</span>
+        <span>Executive Stakeholder Management</span>
+        <span>AI Transformation Strategy</span>
+        <span>Cloud Migration & Modernization</span>
+        <span>Enterprise Architecture Alignment</span>
+        <span>Program & Portfolio Leadership</span>
+        <span>Managed Services Operating Models</span>
+        <span>Cybersecurity Transformation</span>
+        <span>Service Delivery Governance</span>
+        <span>MSR / QBR / EBR / SLA Governance</span>
+        <span>Technical Requirements Engineering</span>
+        <span>Business Outcome Mapping</span>
+        <span>Commercial Forecasting & P&L</span>
+        <span>Renewals & Expansion</span>
+        <span>Responsible AI Governance</span>
+        <span>Technical Documentation Standards</span>
+        <span>Audit & Compliance</span>
+        <span>Cross-Sell / Upsell & MEDDPICC</span>
+        <span>SOW & Contract Governance</span>
+        <span>AI Use Case Discovery & Prioritisation</span>
+      </div>
+    </section>
+
+    <section id="stories" class="section">
+      <p class="eyebrow">Success Stories</p>
+      <h2>Customer outcomes delivered at enterprise scale.</h2>
+      <div class="timeline">
+        <article>
+          <div><span class="story-logo">SAP</span></div>
+          <div>
+            <h3>ACI Platform Turnaround</h3>
+            <p>Recovered a challenged ACI platform by introducing Cisco Managed Services, proactive governance, and executive relationship management. Improved availability, reduced risk, delayed platform retirement, generated $2.5M expansion revenue, and secured a $5M ARR / $15M TCV renewal.</p>
+          </div>
+        </article>
+        <article>
+          <div><span class="story-logo">Shell</span></div>
+          <div>
+            <h3>SecurePlant OT Cybersecurity Transformation</h3>
+            <p>Directed global OT/ICS managed security transformation across 30 downstream and upstream sites with 20+ vendors. Drove $9.3M expansion opportunities, 50% productivity improvement through automation, zero SLA penalties, and 23% gross margin improvement.</p>
+          </div>
+        </article>
+        <article>
+          <div><span class="story-logo">ENGEL</span></div>
+          <div>
+            <h3>Managed Security & Threat Analytics</h3>
+            <p>Transformed a complex security services engagement by improving monitoring, ticket enrichment, operational governance, and lifecycle management; achieved no major incidents over a five-year engagement period and supported multi-year renewal.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="dark-wrap" id="certifications">
+      <section class="section">
+        <p class="eyebrow">Credentials</p>
+        <h2>Certified across AI, Cloud, Security, Agile and Program Management.</h2>
+        <div class="certs">
+          <span>CISM</span>
+          <span>PMP</span>
+          <span>AWS Certified Solutions Architect – Associate</span>
+          <span>Microsoft Azure AZ-305</span>
+          <span>Certified ScrumMaster</span>
+          <span>ITIL</span>
+          <span>Fortinet Cybersecurity Fundamentals</span>
+          <span>Cisco Security Ninja Green Belt</span>
+          <span>Agentic AI & GenAI Enablement</span>
+          <span>Google Vertex AI & Gemini</span>
+        </div>
+      </section>
+    </div>
+
+    <section id="contact" class="section contact">
+      <p class="eyebrow">Contact</p>
+      <h2>Let’s discuss Customer Success, AI Transformation, Cloud Modernization, or Enterprise Delivery Leadership.</h2>
+      <div class="hero-actions center">
+        <a class="button primary" href="mailto:personal.manjunathc@gmail.com">Email Me</a>
+        <a class="button secondary" href="https://www.linkedin.com/in/manjunathc" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Manjunath Channappa. Customer Success · AI & Cloud Transformation · Engagement Leadership.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav');
+      nav.classList.toggle('active');
+    }
+    function closeMenu() {
+      const nav = document.getElementById('nav');
+      nav.classList.remove('active');
+    }
+  </script>
 </body>
 </html>
